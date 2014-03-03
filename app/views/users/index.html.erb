@@ -1,0 +1,14 @@
+<h1>Total Users (<%= @users.count %> people)</h1>
+
+<% @groups.each do |group| %>
+<div style="width: 30%;margin-right: 20px;float: left;" class="well">
+  <h3><%= group.name %> (<%= group.users.count %> people)</h3>
+  <ul>
+    <% group.users.each do |user| %>
+    <li><%= link_to user.name, user %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+<%= link_to "Add Group", new_group_path, class: "btn btn-primary" %>
+<%= link_to "Add User", new_user_path, class: "btn btn-primary" %>
