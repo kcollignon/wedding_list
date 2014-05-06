@@ -4,7 +4,7 @@
 <div style="width: 30%;margin-right: 20px;float: left;" class="well">
   <h3><%= group.name %> (<%= group.users.count %> people)</h3>
   <ul>
-    <% group.users.each do |user| %>
+    <% group.users.by_last_name.each do |user| %>
     <li><%= link_to user.name, user %></li>
     <% end %>
   </ul>
